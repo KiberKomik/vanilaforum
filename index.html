@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="icon" href="/static/images/logo64.webp">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                try{
+                    document.getElementById("login").href = `/auth/login?rdir=${window.location.pathname}`;
+                } catch{}
+            });
+
+        </script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% if not menu %}
+            <div class="menu">
+                <div class="leftmenu">
+                    {% block menu %}{% endblock %}
+                </div>
+                <div class="rightmenu">
+                    {% if user %}
+                        <a href="/profile?user={{ user.id }}">{{ user.username }}</a>
+                    {% else %}
+                        <a href="/auth/login" id="login">Войти</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+        <p style="margin: 50px;"></p>
+        {% block body %}{% endblock %}
+
+        <footer class="footer">
+            <p>© 2023 vanilaworld. Права зашифрованы <a href="https://discord.gg/RzePF6B9Zr">Наш discord</a></p>
+        </footer>
+
+    </body>
+</html>
