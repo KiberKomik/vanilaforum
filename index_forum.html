@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block title %}Форум — [Макет]{% endblock %}
+
+{% block menu %}
+    <a href="/">Главная</a>
+    <a href="/forum" style="color: #FFF; font-weight: bold;">Форум</a>
+    <a href="#">Ссылка</a>
+{% endblock %}
+
+{% block body %}
+<div class="forum-container">
+    
+    <aside class="forum-sidebar">
+        <div class="sidebar-title">Разделы</div>
+        <ul class="category-list">
+            <li class="category-item active">
+                <a href="#">
+                    <span>💬 Все темы</span>
+                    <span class="category-badge">0</span>
+                </a>
+            </li>
+            <li class="category-item">
+                <a href="#">
+                    <span>📁 Категория 1</span>
+                    <span class="category-badge">0</span>
+                </a>
+            </li>
+            <li class="category-item">
+                <a href="#">
+                    <span>📁 Категория 2</span>
+                    <span class="category-badge">0</span>
+                </a>
+            </li>
+            <li class="category-item">
+                <a href="#">
+                    <span>📁 Категория 3</span>
+                    <span class="category-badge">0</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="forum-main">
+        
+        <div class="forum-header-bar">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Поиск по темам..." disabled>
+            </div>
+            <button class="btn-primary" style="opacity: 0.9; cursor: default;">
+                <span>+ Создать тему</span>
+            </button>
+        </div>
+
+        <div class="topics-list">
+            
+            <div class="topic-card">
+                <div class="topic-main">
+                    <div class="topic-avatar">#</div>
+                    <div class="topic-info">
+                        <div>
+                            <span class="topic-tag">Метка</span>
+                            <a href="#" class="topic-title" style="color: var(--text-muted);">Заголовок будущей темы обсуждения...</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span>Автор: юзернейм</span>
+                            <span>•</span>
+                            <span>время назад</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-stats">
+                    <div>
+                        <span class="stat-num">0</span>
+                        <span>ответов</span>
+                    </div>
+                    <div>
+                        <span class="stat-num">0</span>
+                        <span>просмотров</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-main">
+                    <div class="topic-avatar" style="background: #444;">#</div>
+                    <div class="topic-info">
+                        <div>
+                            <span class="topic-tag" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">Метка</span>
+                            <a href="#" class="topic-title" style="color: var(--text-muted);">Пример еще одной темы на форуме...</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span>Автор: юзернейм</span>
+                            <span>•</span>
+                            <span>время назад</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-stats">
+                    <div>
+                        <span class="stat-num">0</span>
+                        <span>ответов</span>
+                    </div>
+                    <div>
+                        <span class="stat-num">0</span>
+                        <span>просмотров</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+{% endblock %}
